@@ -1,0 +1,168 @@
+body{
+    margin:0;
+    box-sizing:border-box;
+}
+
+
+nav{
+   display: flex;
+    flex-direction: row;
+    justify-content: space-between;   
+}
+#navimg{
+    display: flex;
+    flex-direction: row;
+}
+.navlinks{
+    margin: 0.5%;
+    border-radius: 10px;
+    border:1px solid lightblue;
+  align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap:90px;
+    height: 30px;
+      padding: 10px;
+}
+#navbox{
+    align-items: center;
+    display: flex;
+    gap:30px;
+    
+}
+
+.navlinks a{
+    
+    font-style: oblique;
+text-decoration: none;
+  
+}
+.navlinks a:hover{
+    text-decoration: underline;
+border-radius:10px;
+color: #800a0c;
+text-shadow: #ccc;
+box-shadow: #08182c;
+
+}
+nav h2{
+    color: rgb(25, 174, 223);
+}
+#previous {
+    padding: 10px;
+   
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    border-radius: 10px;
+    
+    color: rgb(26, 175, 175);
+    font-size: medium;
+    cursor: pointer;
+}
+#previous a{
+    text-decoration: underline;
+}
+#previous:hover {
+     color: rgba(189, 2, 2, 0.603);
+}
+/* Form Container */
+
+#form1{
+    display:flex;
+    justify-content:center;
+    padding:20px;
+}
+
+form{
+    width:600px;
+    background:lightcyan;
+    border-radius:10px;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+form p{
+    background:lightpink;
+    padding:10px;
+    border-radius:10px;
+    font-size:24px;
+    text-align:center;
+    margin:0 0 10px;
+}
+
+/* Each Row */
+
+.form-row{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+/* Labels */
+
+.form-row label{
+    width:160px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-weight:bold;
+}
+
+/* Inputs & Select */
+
+.form-row input,
+.form-row select{
+    width:400px;
+    height:35px;
+    padding:5px 10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:16px;
+}
+
+/* Checkbox */
+
+.qn{
+    margin-left:180px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.qn input{
+    width:16px;
+    height:16px;
+}
+
+/* Button */
+
+button{
+    width:150px;
+    height:40px;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    background:darkseagreen;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+}
+#footerBottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+    font-size: 12px;
+    color: black;
+    flex-wrap: wrap;
+    gap: 8px;
+}
