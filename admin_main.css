@@ -1,0 +1,148 @@
+*{
+    margin:0;
+    box-sizing: border-box;
+    padding: 0;
+}
+body{
+    background: white;
+}
+.welcome_card{
+    text-align: center;
+    color:#c0225eab;
+}
+nav{
+   display: flex;
+    flex-direction: row;
+    justify-content: space-between;   
+}
+#navimg{
+    display: flex;
+    flex-direction: row;
+}
+
+#navbox{
+    align-items: center;
+    display: flex;
+    gap:30px;
+    
+}
+#navbox a{
+    text-decoration: none;
+}
+
+nav h2{
+    padding-top: 15px;
+    color: rgb(25, 174, 223);
+}
+#logout{
+   font-family: 'Times New Roman', Times, serif;
+   font-weight: bold;
+   color: rgb(17, 147, 190);
+   font-size: large;
+}
+
+#profile{
+     border:1px solid hsl(0, 0%, 80%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsla(0, 0%, 0%,0.1);
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+  width: 500px;
+    display:flex;
+    flex-direction: column;
+    justify-self: center;
+  
+    
+    
+    }
+    #profile_img {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    
+}
+ #profile_img img{
+    border:1px solid rgba(173, 216, 230, 0.322);
+    border-radius: 200px;
+ }
+
+#profile-info {
+       display: flex;
+    justify-content:center;
+    width: 100%;
+       gap:30px;
+       text-align: center;
+}
+
+.title,
+.value {
+    text-align: left;
+}
+
+.title_info,
+.info {
+    margin: 8px 0;
+}
+.title_info{
+    color: #973e07;
+    font-weight: bold;
+}
+
+#lists{
+    box-shadow: 5px 5px 5px hsla(0, 0%, 0%,0.1);
+    margin-left: 5%;
+   padding:    20px;
+    border-radius: 5px ;
+    background: whitesmoke;
+    width: 400px;
+     text-align: center;
+     display: flex;
+     flex-direction: column;
+   
+    gap:10px;
+}
+.list_button{
+    padding: 10px;
+    display: flex;
+    justify-content:space-between;
+    gap: 40px;
+    border:none;
+   
+}
+.list_button:hover{
+   color: aquamarine;
+   
+}
+#lists h3{
+    font-style: italic;
+ color:#ff0e6a;
+}
+
+#lists p{
+ color:#688977fe;
+}
+.btn{
+    
+    border: none;
+    color:rgb(210, 73, 73);
+    background-color: aliceblue;
+}
+.btn:hover{
+    color:green;
+}
+#addBtn{
+    height:30px;
+    width:140px;
+    background-color: rgba(2, 195, 248, 0.262);
+    border:none;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 2%;
+    margin-bottom: 1%;
+   border-radius:10px;
+}
+
+#addBtn:hover{
+    color: red;
+}
