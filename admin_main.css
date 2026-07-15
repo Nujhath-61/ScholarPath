@@ -56,12 +56,7 @@ nav h2{
     
     
     }
-    #profile_img {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    
-}
+  
  #profile_img img{
     border:1px solid rgba(173, 216, 230, 0.322);
     border-radius: 200px;
@@ -90,40 +85,45 @@ nav h2{
 }
 
 #lists{
-    box-shadow: 5px 5px 5px hsla(0, 0%, 0%,0.1);
-    margin-left: 5%;
-   padding:    20px;
-    border-radius: 5px ;
-    background: whitesmoke;
-    width: 400px;
-     text-align: center;
-     display: flex;
-     flex-direction: column;
-   
-    gap:10px;
+    width:80%;
+    max-width:700px;
+    margin:30px auto;
+    padding:20px;
+    background:whitesmoke;
+    border-radius:5px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    align-items:center ;
+}
+.section-title{
+    text-align: center;
+    width:90%;
+    margin:40px auto 15px;
+}
+
+.section-title h2{
+    color:#222;
 }
 .list_button{
     padding: 10px;
     display: flex;
-    justify-content:space-between;
-    gap: 40px;
-    border:none;
+      border:none;
    
 }
 .list_button:hover{
    color: aquamarine;
    
 }
-#lists h3{
+#lists h2{
     font-style: italic;
  color:#ff0e6a;
 }
 
-#lists p{
+#lists h3{
  color:#688977fe;
 }
+
 .btn{
-    
+   
     border: none;
     color:rgb(210, 73, 73);
     background-color: aliceblue;
@@ -132,17 +132,96 @@ nav h2{
     color:green;
 }
 #addBtn{
-    height:30px;
-    width:140px;
-    background-color: rgba(2, 195, 248, 0.262);
-    border:none;
-    margin-top: 5%;
-    margin-left: 5%;
-    margin-right: 2%;
-    margin-bottom: 1%;
-   border-radius:10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    margin: 30px 0 20px 10%;
+    background: linear-gradient(135deg, #0d6dfd57, #4dd8f7);
+    color: black;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25);
+    transition: all 0.3s ease;
+}
+
+#addBtn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(13, 110, 253, 0.35);
+}
+
+#addBtn:active{
+    transform: scale(0.98);
 }
 
 #addBtn:hover{
     color: red;
+}
+
+
+.scholarship-card{
+   max-width: 700px;
+    background:white;
+    border-radius:10px;
+    padding:20px;
+    margin-bottom:20px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+   align-self:   center;
+}
+
+.scholarship-card h3{
+    color:#ff0e6a;
+    margin-bottom:10px;
+}
+
+.scholarship-card p{
+    color:#688977;
+    margin-bottom:20px;
+
+}
+.card-info{
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+}
+.scholarship-card img{
+    width:100%;
+    max-width:300px;
+    height:auto;
+    border-radius:10px;
+    object-fit:cover;
+}
+.list_button{
+    display:flex;
+    gap:10px;
+    flex-direction:column;
+
+}
+
+
+.btn{
+    padding:10px 20px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+
+}
+
+.btn:nth-child(1){
+   background: linear-gradient(135deg, #0d6dfd77, #4df7be);
+    color:white;
+}
+
+.btn:nth-child(2){
+  background: linear-gradient(135deg, #bef06f57, #4dd8f7);
+}
+
+.btn:nth-child(3){
+  background: linear-gradient(135deg, #0d6dfd57, #f74d91);
+    color:white;
 }

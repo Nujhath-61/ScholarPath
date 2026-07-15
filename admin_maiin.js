@@ -31,7 +31,7 @@ profile.innerHTML ="";
     list.forEach(element => {
         profile.innerHTML += `
         <div id="profile_img">
-            <img src="https://drawinghowtos.com/wp-content/uploads/2025/04/The-smiling-Tom-colored.jpg" width="100" height="100"alt="">
+            <img src="https://e7.pngegg.com/pngimages/563/269/png-clipart-tom-cat-tom-and-jerry-cat-mammal-animals-thumbnail.png" width="100" height="100"alt="">
         </div>
      <div id="profile-info">
      <div class = "title">
@@ -65,35 +65,66 @@ function add_scholarship(){
 
 }
 function scholarship_details(info) {
+
     const lists = document.getElementById("lists");
-    
-    // Clear previous content
+
     lists.innerHTML = "";
 
-    // If no data
-    if (info.length === 0) {
-        lists.innerHTML = "<p>No data available.</p>";
+    if(info.length === 0){
+        lists.innerHTML = "<p>No scholarships posted yet.</p>";
         return;
     }
 
-    // Display data
-    info.forEach(element => {
+    info.forEach((element,index)=>{
+
         lists.innerHTML += `
-            <div class="list">
-                <h3>${element.name}</h3>
-                <p>${element.available_program}</p>
+      
+       
+        <div class="scholarship-card">
+        <div class="card-info">
+        <div> 
+        <img src=${element.image} alt="" >
+        </div>
+           
+      <div class="card_title"> 
+         <h2>${element.name}</h2>
+
+            <h3>${element.available_program}</h3>
+              <div class="list_button">
+
+                <button class="btn" onclick="editScholarship(${index})">
+                    Edit
+                </button>
+
+                  <button class="btn" onclick="viewScholarship(${index})">
+                    Details
+                </button>
+                <button class="btn" onclick="deleteScholarship(${index})">
+                    Delete
+                </button>
+
             </div>
-             <div class="list_button">
-                <button class="btn">Edit</buttton>
-                 <button  class="btn">Details</buttton>
-          <button  class="btn">Delete</buttton>
-            </div>
-            <hr>
+          
+
+        </div>
+           
+          
+        
+        </div>
+      
+
+          
+
+        </div>
+       
 
         `;
+
     });
 
-    
 }
+
+    
+
 
 
