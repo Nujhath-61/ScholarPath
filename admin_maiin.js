@@ -21,8 +21,13 @@ const info  = [
     
   }
 ]
+ 
+const lists = JSON.parse(localStorage.getItem("list")) || [];
+
+scholarship_details2(lists);
 profile_details(details1);
 scholarship_details(info);
+
 function profile_details(list){
     const profile = document.getElementById("profile");
 
@@ -51,11 +56,11 @@ profile.innerHTML ="";
         </div> `;
     });
 }
-const button = document.getElementById("btn");
-button.innerHTML += `
+const add = document.getElementById("add");
+add.innerHTML += `
 <div >
 
-<button id="addBtn" > <img src="Icons/plus.png" alt="" height="12" width="12">Add a scholarship </buttton> <br>
+<a id="addBtn" href="add.html"> <img src="Icons/plus.png" alt="" height="12" width="12">Add a scholarship </a> <br>
  </div>
 
 `
@@ -124,7 +129,44 @@ function scholarship_details(info) {
 
 }
 
-    
 
+function scholarship_details2(info) {
 
+    const lists2 = document.getElementById("lists2");
 
+    lists2.innerHTML = "";
+
+    if (info.length === 0) {
+        lists2.innerHTML = "<p>No scholarships posted yet.</p>";
+        return;
+    }
+
+    info.forEach((element, index) => {
+        lists2.innerHTML += `
+            <div class="scholarship-card">
+                <div class="card-info">
+
+                    <div class="card_title">
+                        <h2>${element.title}</h2>
+                        <h3>${element.location}</h3>
+
+                        <div class="list_button">
+                            <button class="btn" onclick="editScholarship(${index})">
+                                Edit
+                            </button>
+
+                            <button class="btn" onclick="viewScholarship(${index})">
+                                Details
+                            </button>
+
+                            <button class="btn" onclick="deleteScholarship(${index})">
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        `;
+    });
+}
