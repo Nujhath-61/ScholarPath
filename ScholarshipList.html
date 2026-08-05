@@ -3,50 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-   <link rel="stylesheet" href="ScholarshipList.css">
+    <title>Scholarship List | ScholarPath</title>
+    <link rel="stylesheet" href="ScholarshipList.css">
 </head>
 
 <body>
 
-<nav>
+    <!-- Navigation -->
+
+    <nav>
+
         <div id="navimg">
-            <div>
-  <img src="graduation-cap.png" alt="" width="60" height="60">
-            </div>
-               <h2>ScholarPath</h2>
+            <img src="graduation-cap.png" alt="Logo" width="60" height="60">
+            <h2>ScholarPath</h2>
         </div>
+
         <div class="navlinks">
-          <a href="">Home</a>
-          <a href="">Scholarships</a>
-          <a href="">Blogs</a>
-          <a href="">Resources</a>
+            <a href="Landingpage.html">Home</a>
+            <a href="blog.html">Blogs</a>
+            <a href="#">Resources</a>
         </div>
+
         <div id="navbox">
-        <a href="" id="login">Log in</a>        
-  <button id="signup">Sign up</button>
- 
+            <a  href="login.html" id="login">Log In</a>
+            <a href="register_2.html"id="signup">Sign Up</a>
         </div>
+
     </nav>
-</nav>
 
-<h1 class="container-head">All Scholarship</h1>
-<div class="container">
+    <!-- Page Heading -->
 
-    <div id="scholarships">
-        
+    <h1 class="container-head">All Scholarships</h1>
+
+    <!-- Scholarship Cards -->
+
+    <div class="container">
+
+        <!-- JavaScript will add the scholarship cards here -->
+        <div id="scholarships"></div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button onclick="loadPage(1)">1</button>
+            <button onclick="loadPage(2)">2</button>
+        </div>
+
     </div>
 
-    <div class="pagination">
-        <button onclick="loadPage(1)">1</button>
-        <button onclick="loadPage(2)">2</button>
-    </div>
+    <!-- Footer -->
 
-</div>
-<footer>
-© 2026 ScholarPath. All rights reserved.
-</footer>
+    <footer>
+        © 2026 ScholarPath. All rights reserved.
+    </footer>
 
-<script src="Scholarship.js"></script>
+    <script src="Scholarship.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,464 @@
+/* ===== Google Font ===== */
+/* ===== Google Font ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+:root{
+    --primary:#2563eb;
+    --primary-light:#dbeafe;
+    --secondary:#1e3a8a;
+    --text:#334155;
+    --muted:#64748b;
+    --border:#e2e8f0;
+    --bg:#f8fafc;
+    --white:#ffffff;
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+    font-family:"Poppins",sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* =========================
+   Blog Hero
+========================= */
+
+.blog-hero{
+
+    text-align:center;
+
+    padding:60px 20px;
+
+    background:linear-gradient(
+        135deg,
+        #1d4ed8,
+        #2563eb
+    );
+
+    color:white;
+
+}
+
+.blog-hero-tag{
+
+    display:inline-block;
+
+    background:rgba(255,255,255,.18);
+
+    padding:7px 15px;
+
+    border-radius:30px;
+
+    font-size:.8rem;
+
+    letter-spacing:1px;
+
+    margin-bottom:15px;
+
+}
+
+.blog-hero h1{
+
+    max-width:750px;
+
+    margin:auto;
+
+    font-size:clamp(
+        1.8rem,
+        4vw,
+        3rem
+    );
+
+    line-height:1.25;
+
+}
+
+.blog-hero-description{
+
+    max-width:600px;
+
+    margin:20px auto 0;
+
+    line-height:1.7;
+
+    opacity:.92;
+
+}
+/* =========================
+Featured Blog
+========================= */
+
+
+.featured-blog{
+
+    width:min(1050px,92%);
+
+    margin:40px auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:30px;
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 12px 30px rgba(0,0,0,.08);
+
+}
+
+
+.featured-blog img{
+
+    width:100%;
+
+    height:100%;
+
+    min-height:320px;
+
+    object-fit:cover;
+
+}
+
+
+.featured-content{
+
+    padding:30px;
+
+}
+
+
+.featured-category{
+
+    display:inline-block;
+
+    background:#dbeafe;
+
+    color:#1d4ed8;
+
+    padding:7px 15px;
+
+    border-radius:20px;
+
+    font-size:.75rem;
+
+    font-weight:600;
+
+}
+
+
+.featured-content h2{
+
+    margin:18px 0;
+
+    color:#0f172a;
+
+    font-size:1.7rem;
+
+}
+
+
+.featured-content p{
+
+    color:var(--muted);
+
+    line-height:1.7;
+
+}
+
+
+.featured-meta{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-top:20px;
+
+    color:var(--muted);
+
+    font-size:.85rem;
+
+}
+
+
+
+/* =========================
+Categories
+========================= */
+
+
+.category-section{
+
+    width:min(1050px,92%);
+
+    margin:30px auto;
+
+    display:flex;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.category{
+
+    border:none;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    padding:10px 18px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+
+.category:hover,
+.category.active{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+
+
+/* =========================
+Blog Grid
+========================= */
+
+
+.blogs-grid{
+
+    width:min(1050px,92%);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+    padding-bottom:60px;
+
+}
+
+
+
+/* =========================
+Blog Card
+========================= */
+
+
+.blog-card{
+
+    background:white;
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.07);
+
+    transition:.3s;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+.blog-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+.blog-image{
+
+    width:100%;
+
+    height:180px;
+
+    object-fit:cover;
+
+}
+
+
+.blog-content{
+
+    padding:22px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    flex:1;
+
+}
+
+
+.blog-category{
+
+    width:fit-content;
+
+    background:#dbeafe;
+
+    color:#2563eb;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:.75rem;
+
+    font-weight:600;
+
+}
+
+
+.blog-content h3{
+
+    margin:15px 0 10px;
+
+    color:#0f172a;
+
+    font-size:1.1rem;
+
+    line-height:1.4;
+
+}
+
+
+.blog-description{
+
+    color:var(--muted);
+
+    line-height:1.6;
+
+    font-size:.9rem;
+
+    margin-bottom:20px;
+
+    flex:1;
+
+}
+
+
+.blog-meta{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+    color:#64748b;
+
+    font-size:.8rem;
+
+}
+
+
+.read-more{
+
+    margin-top:18px;
+
+    text-decoration:none;
+
+    color:#2563eb;
+
+    font-weight:600;
+
+    font-size:.9rem;
+
+}
+
+
+.read-more:hover{
+
+    text-decoration:underline;
+
+}
+
+
+
+/* =========================
+Responsive
+========================= */
+
+
+@media(max-width:900px){
+
+    .featured-blog{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .featured-content{
+
+        padding:25px;
+
+    }
+
+
+}
+
+
+@media(max-width:600px){
+
+    .hero{
+
+        padding:45px 15px;
+
+    }
+
+
+    .blogs-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .featured-meta{
+
+        flex-direction:column;
+
+    }
+
+
+}

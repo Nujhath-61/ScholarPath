@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In | ScholarPath</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="Landingpage.html" class="brand">
+            <img src="graduation-cap.png" alt="ScholarPath logo">
+            <span>ScholarPath</span>
+        </a>
+
+        <p class="signup-text">
+            New to ScholarPath?
+            <a href="register_2.html">Create an account</a>
+        </p>
+    </header>
+
+    <main class="login-page">
+        <section class="login-card">
+            <div class="login-intro">
+                <p class="eyebrow">WELCOME BACK</p>
+                <h1>Log in to your account.</h1>
+                <p>Continue exploring scholarships made for your goals.</p>
+            </div>
+
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="example@email.com"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+
+                <label class="show-password">
+                    <input type="checkbox" id="showPassword">
+                    <span>Show password</span>
+                </label>
+
+                <p id="message" class="message"></p>
+
+                <button type="submit" class="login-button">
+                    Log In
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <script src="login.js"></script>
+</body>
+</html>

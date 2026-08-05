@@ -1,0 +1,395 @@
+:root {
+    --blue: #2563eb;
+    --navy: #172554;
+    --text: #334155;
+    --muted: #64748b;
+    --border: #dbe3ef;
+    --bg: #f7f9fd;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    min-height: 76px;
+    padding: 0 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    border-bottom: 1px solid var(--border);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--navy);
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.brand img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-actions a {
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-actions button {
+    padding: 9px 13px;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    background: white;
+    color: #dc2626;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.container {
+    width: min(960px, 92%);
+    margin: auto;
+    padding: 45px 0 70px;
+}
+
+.profile-card,
+.saved-section,
+.edit-section {
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+}
+
+.profile-card {
+    overflow: hidden;
+}
+
+.profile-cover {
+    height: 120px;
+    background: linear-gradient(135deg, #172554, #2563eb);
+}
+
+.profile-main {
+    padding: 0 32px 32px;
+}
+
+.profile-top {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: -42px;
+}
+
+.avatar {
+    width: 88px;
+    height: 88px;
+    display: grid;
+    place-items: center;
+    border: 5px solid white;
+    border-radius: 50%;
+    background: #dbeafe;
+    color: #1d4ed8;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.edit-button,
+.save-button {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    background: var(--blue);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.user-name {
+    margin: 17px 0 5px;
+    color: var(--navy);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+}
+
+.email {
+    margin: 0;
+    color: var(--muted);
+}
+
+.stats {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.stat {
+    padding: 15px;
+    border-radius: 10px;
+    background: #f8fafc;
+    text-align: center;
+}
+
+.stat strong {
+    display: block;
+    color: var(--navy);
+    font-size: 1.2rem;
+}
+
+.stat span {
+    color: var(--muted);
+    font-size: 0.75rem;
+}
+
+.info-grid {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.info-box {
+    padding: 15px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.info-box small {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: bold;
+}
+
+.info-box strong {
+    color: var(--text);
+    font-size: 0.9rem;
+}
+
+.saved-section,
+.edit-section {
+    margin-top: 22px;
+    padding: 28px;
+}
+
+.section-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.section-top h2,
+.edit-section h2 {
+    margin: 0;
+    color: var(--navy);
+    font-size: 1.25rem;
+}
+
+.saved-list {
+    margin-top: 18px;
+    display: grid;
+    gap: 12px;
+}
+
+.saved-card {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #f8fafc;
+}
+
+.saved-card h3 {
+    margin: 0 0 5px;
+    color: var(--navy);
+    font-size: 0.98rem;
+}
+
+.saved-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+.saved-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.saved-actions button {
+    padding: 8px 10px;
+    border: none;
+    border-radius: 7px;
+    background: #dbeafe;
+    color: #1d4ed8;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.saved-actions .remove {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.empty-message {
+    padding: 20px;
+    border: 1px dashed var(--border);
+    border-radius: 10px;
+    color: var(--muted);
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.input-group {
+    margin-top: 14px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.84rem;
+    font-weight: bold;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font: inherit;
+}
+
+.not-logged-in {
+    padding: 55px 20px;
+    border-radius: 15px;
+    background: white;
+    text-align: center;
+}
+
+.not-logged-in a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 11px 15px;
+    border-radius: 8px;
+    background: var(--blue);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .nav-actions a {
+        display: none;
+    }
+
+    .profile-main {
+        padding: 0 20px 25px;
+    }
+
+    .stats,
+    .info-grid,
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .saved-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+/* ===========================
+   Edit Profile Modal
+=========================== */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    width: min(700px, 92%);
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 30px;
+    border-radius: 16px;
+    background: white;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 50px rgba(0,0,0,.2);
+    position: relative;
+    animation: modalOpen .25s ease;
+}
+
+@keyframes modalOpen {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    border: none;
+    background: transparent;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--muted);
+}
+
+.close-modal:hover {
+    color: var(--navy);
+}

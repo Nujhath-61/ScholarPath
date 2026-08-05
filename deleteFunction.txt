@@ -1,0 +1,30 @@
+// Sample data stored in localStorage
+let items = ["Apple", "Banana", "Cherry"];
+localStorage.setItem("fruits", JSON.stringify(items));
+
+// 1. Function to render the list with delete buttons
+function displayList() {
+    let currentItems = JSON.parse(localStorage.getItem("fruits")) || [];
+    let listHtml = "";
+
+    currentItems.forEach((item, index) => {
+        // We manually embed the index into the delete function call
+        listHtml += `<li>${item} <button onclick="deleteItem(${index})">Delete</button></li>`;
+    });
+
+    document.getElementById("myList").innerHTML = listHtml;
+}
+
+// 2. Function that receives the sent index and updates localStorage
+function deleteItem(indexToDelete) {
+    let currentItems = JSON.parse(localStorage.getItem("fruits")) || [];
+    
+    // Remove the specific item from the array using its index
+    currentItems.splice(indexToDelete, 1);
+    
+    // Save the updated array back to localStorage
+    localStorage.setItem("fruits", JSON.stringify(currentItems));
+    
+    // Refresh the UI list
+    displayList();
+}

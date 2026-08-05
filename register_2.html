@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | ScholarPath</title>
+    <link rel="stylesheet" href="register_2.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="Landingpage.html" class="brand">
+            <img src="graduation-cap.png" alt="ScholarPath logo">
+            <span>ScholarPath</span>
+        </a>
+
+        <p class="login-text">
+            Already have an account?
+            <a href="login.html">Log in</a>
+        </p>
+    </header>
+
+    <main class="signup-page">
+        <section class="signup-card">
+            <div class="form-intro">
+                <p class="eyebrow">CREATE YOUR ACCOUNT</p>
+                <h1>Start your scholarship journey.</h1>
+                <p>Sign up to discover scholarship opportunities made for you.</p>
+            </div>
+
+            <form id="signupForm">
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="fullName">Full Name</label>
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Enter your full name"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label for="phone">Phone Number</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="01XXXXXXXXX"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="example@email.com"
+                        required
+                    >
+                </div>
+
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="institution">Institution</label>
+                        <input
+                            type="text"
+                            id="institution"
+                            placeholder="School or university name"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label for="aspirant">Study Level</label>
+                        <select id="aspirant" required>
+                            <option value="">Select your level</option>
+                            <option value="Undergraduate">Undergraduate</option>
+                            <option value="Master's">Master's</option>
+                            <option value="PhD">PhD</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="address">Address</label>
+                    <input
+                        type="text"
+                        id="address"
+                        placeholder="Your city and country"
+                        required
+                    >
+                </div>
+
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Minimum 6 characters"
+                            minlength="6"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Enter password again"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <label class="terms">
+                    <input type="checkbox" id="terms" required>
+                    <span>I agree to the Terms and Conditions.</span>
+                </label>
+
+                <p id="message" class="message"></p>
+
+                <button type="submit" class="signup-button">
+                    Create Account
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <script src="register_2.js"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,6 +8,7 @@
 </head>
 <body>
         <nav>
+
         <div id="navimg">
             <div>
   <img src="graduation-cap.png" alt="" width="60" height="60">
@@ -34,7 +35,7 @@
   
     <section class="section-title">
 
-        <h2>Posted Jobs</h2>
+        <h2>Posted</h2>
 
     </section>
 
@@ -47,5 +48,53 @@
 
     <script src="admin_maiin.js"></script>
     
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | ScholarPath</title>
+    <link rel="stylesheet" href="admin_main.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <a class="brand" href="admin_main.html">
+            <img src="graduation-cap.png" alt="ScholarPath logo">
+            <span>ScholarPath</span>
+        </a>
+
+        <a class="logout-link" href="Landingpage.html">Log out</a>
+    </header>
+
+    <main class="container">
+        <section class="hero-section">
+            <div>
+                <p class="eyebrow">ADMIN DASHBOARD</p>
+                <h1>Welcome back, Admin!</h1>
+                <p>Manage your scholarship opportunities in one simple place.</p>
+            </div>
+
+            <a class="add-button" href="add.html">
+                <span>+</span> Add Scholarship
+            </a>
+        </section>
+
+        <section class="profile-card" id="profile"></section>
+
+        <section class="posted-header">
+            <div>
+                <p class="eyebrow">SCHOLARSHIPS</p>
+                <h2>Posted scholarships</h2>
+            </div>
+            <span class="count-badge" id="scholarshipCount">0 scholarships</span>
+        </section>
+
+        <section id="lists2" class="scholarship-list"></section>
+    </main>
+
+    <script src="admin_maiin.js"></script>
 </body>
 </html>

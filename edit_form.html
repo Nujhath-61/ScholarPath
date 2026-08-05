@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Scholarship | ScholarPath</title>
+    <link rel="stylesheet" href="edit_form.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="admin_main.html" class="brand">
+            <img src="graduation-cap.png" alt="ScholarPath logo">
+            <span>ScholarPath</span>
+        </a>
+
+        <a href="admin_main.html" class="back-link">← Back to Dashboard</a>
+    </header>
+
+    <main class="page-container">
+        <section class="form-card">
+            <p class="eyebrow">ADMIN DASHBOARD</p>
+            <h1>Edit scholarship</h1>
+            <p class="subtitle">Update the scholarship details below.</p>
+
+            <form id="editScholarshipForm">
+                <div class="form-group">
+                    <label for="title">Scholarship Title</label>
+                    <input type="text" id="title" required placeholder="Example: Erasmus Mundus Scholarship">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" required placeholder="Example: Europe">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deadline">Deadline</label>
+                        <input type="date" id="deadline" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="link">Website Link</label>
+                    <input type="url" id="link" placeholder="https://example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea
+                        id="description"
+                        rows="6"
+                        required
+                        placeholder="Write important information about this scholarship..."
+                    ></textarea>
+                </div>
+
+                <p id="message"></p>
+
+                <div class="button-group">
+                    <a href="admin_main.html" class="cancel-button">Cancel</a>
+                    <button type="submit" class="save-button">Save Changes</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="edit_form.js"></script>
+</body>
+</html>

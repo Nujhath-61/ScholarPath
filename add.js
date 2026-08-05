@@ -8,7 +8,7 @@ formInfo.addEventListener("submit", function (event) {
     const link = document.getElementById("link").value;
     const type = document.getElementById("type").value;
     const hour = document.getElementById("hour").value;
-    const language = document.getElementById("language").value;
+    
     const description = document.getElementById("description").value;
 
     const scholarship = {
@@ -18,7 +18,6 @@ formInfo.addEventListener("submit", function (event) {
         link,
         type,
         hour,
-        language,
         description
     };
 
