@@ -435,6 +435,48 @@
   font-weight: 700;
 }
 
+.requirements-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.requirement-item {
+  padding: 17px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.requirement-item h3 {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-size: 1rem;
+}
+
+.requirement-item p {
+  margin: 7px 0;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.resource-link {
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--blue);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.resource-link:hover {
+  text-decoration: underline;
+}
+
+.additional-tips {
+  margin-top: 20px;
+}
+
 @media (max-width: 900px) {
   .details-layout {
     grid-template-columns: 1fr;
@@ -483,5 +525,85 @@
 
   .scholarship-header h1 {
     font-size: 2rem;
+  }
+}
+/* Add this at the END of scholarship/src/styles/scholarshipDetails.css */
+
+.requirements-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.requirement-item {
+  padding: 17px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.requirement-item h3 {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-size: 1rem;
+}
+
+.requirement-item p {
+  margin: 7px 0;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.resource-link {
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--blue);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.resource-link:hover {
+  text-decoration: underline;
+}
+
+.additional-tips {
+  margin-top: 20px;
+}
+
+.official-links {
+  display: grid;
+  gap: 10px;
+}
+
+.official-links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--navy);
+  background: #f8fafc;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.official-links a:hover {
+  border-color: #93c5fd;
+  color: var(--blue);
+  background: var(--blue-light);
+}
+
+@media (max-width: 650px) {
+  .requirement-item {
+    padding: 15px;
+  }
+
+  .official-links a {
+    padding: 13px;
+    font-size: 0.86rem;
   }
 }

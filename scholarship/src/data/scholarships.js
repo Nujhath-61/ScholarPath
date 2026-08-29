@@ -140,7 +140,7 @@ export const scholarships = [
               "Your selected Stanford graduate program independently evaluates your application and decides whether to admit you.",
 
             link:
-              "https://gradadmissions.stanford.edu/",
+              "https://knight-hennessy.stanford.edu/admission/after-you-apply/evaluation-processes",
 
             linkText:
               "Learn about Stanford admission →"
@@ -154,7 +154,7 @@ export const scholarships = [
               "KHS separately evaluates applicants based on qualities such as independence of thought, purposeful leadership, and civic mindset.",
 
             link:
-              "https://knight-hennessy.stanford.edu/admission",
+              "https://knight-hennessy.stanford.edu/admission/before-you-apply/criteria",
 
             linkText:
               "Learn about KHS selection →"
@@ -168,7 +168,7 @@ export const scholarships = [
               "If selected as a finalist, complete the required finalist activities and interviews.",
 
             link:
-              "https://knight-hennessy.stanford.edu/",
+              "https://knight-hennessy.stanford.edu/admission/after-you-apply",
 
             linkText:
               "Learn about the finalist process →"
@@ -182,7 +182,7 @@ export const scholarships = [
               "To receive Knight-Hennessy funding, you must ultimately be admitted to an eligible Stanford graduate program and selected as a Knight-Hennessy Scholar.",
 
             link:
-              "https://knight-hennessy.stanford.edu/admission",
+              "https://apply.knight-hennessy.stanford.edu/portal/admission-events",
 
             linkText:
               "View official admission information →"
@@ -2778,7 +2778,963 @@ export const scholarships = [
   applicationInformation:
     "https://cscuk.fcdo.gov.uk/apply/"
 
-}
+} ,
+// ============================================================
+// 8. KAUST FELLOWSHIP
+// ============================================================
+
+{
+  id: 9,
+
+  name:
+    "KAUST Fellowship",
+
+  image:
+    "https://www.kaust.edu.sa/images/kaustlibraries/publishingimages/about/policy/kaust-campus5.png",
+
+  university:
+    "King Abdullah University of Science and Technology (KAUST)",
+
+  location:
+    "Thuwal, Saudi Arabia",
+
+  funding:
+    "Fully Funded",
+
+  deadline:
+    "Varies by application round",
+
+  description:
+    "The KAUST Fellowship provides full financial support to admitted graduate students at King Abdullah University of Science and Technology. The fellowship supports Master's and PhD study across science, engineering, and related fields, making it an attractive option for international students interested in research and advanced technology.",
+
+
+  // ==========================================================
+  // STUDY LEVELS
+  // ==========================================================
+
+  studyLevels: {
+
+    masters: {
+
+      label:
+        "Master's",
+
+      programs: [
+
+        "Computer Science",
+
+        "Computer Engineering",
+
+        "Artificial Intelligence",
+
+        "Data Science and Artificial Intelligence",
+
+        "Electrical and Computer Engineering",
+
+        "Mechanical Engineering",
+
+        "Chemical Engineering",
+
+        "Environmental Science and Engineering",
+
+        "Marine Science and Engineering",
+
+        "Energy Resources and Petroleum Engineering",
+
+        "Other eligible graduate programs"
+
+      ],
+
+      applicationProcess: [
+
+        {
+          title:
+            "Step 1: Check KAUST admission requirements",
+
+          description:
+            "Review the academic, English-language, and application requirements for graduate admission before preparing your application.",
+
+          link:
+            "https://admissions.kaust.edu.sa/how-to-apply",
+
+          linkText:
+            "Check KAUST requirements →"
+        },
+
+        {
+          title:
+            "Step 2: Choose your Master's program",
+
+          description:
+            "Select a Master's program that matches your academic background, interests, and future career or research goals.",
+
+          link:
+            "https://admissions.kaust.edu.sa/academics",
+
+          linkText:
+            "Explore KAUST programs →"
+        },
+
+        {
+          title:
+            "Step 3: Check program requirements",
+
+          description:
+            "Review the specific requirements of your selected program, including prerequisite courses and academic background.",
+
+          link:
+            "https://admissions.kaust.edu.sa/how-to-apply/entry-requirements",
+
+          linkText:
+            "Check program requirements →"
+        },
+
+        {
+          title:
+            "Step 4: Prepare your documents",
+
+          description:
+            "Prepare your transcripts, degree certificate, CV, statement of purpose, recommendation letters, and required test scores.",
+
+          link:
+            "https://admissions.kaust.edu.sa/how-to-apply",
+
+          linkText:
+            "View application requirements →"
+        },
+
+        {
+          title:
+            "Step 5: Prepare your English-language test",
+
+          description:
+            "KAUST requires applicants to demonstrate English-language proficiency through an accepted test unless they qualify for an applicable exemption.",
+
+          link:
+            "https://admissions.kaust.edu.sa/how-to-apply",
+
+          linkText:
+            "Check English requirements →"
+        },
+
+        {
+          title:
+            "Step 6: Identify potential faculty and research areas",
+
+          description:
+            "Explore KAUST faculty and research groups whose work matches your academic interests. This can help you understand the research environment before applying.",
+
+          link:
+            "https://www.kaust.edu.sa/en/study/faculty",
+
+          linkText:
+            "Explore KAUST faculty →"
+        },
+
+        {
+          title:
+            "Step 7: Complete the online application",
+
+          description:
+            "Create your application through the KAUST graduate admissions system and provide the requested academic and personal information.",
+
+          link:
+            "https://admissions.kaust.edu.sa/how-to-apply",
+
+          linkText:
+            "Start your KAUST application →"
+        },
+
+        {
+          title:
+            "Step 8: Submit your application",
+
+          description:
+            "Review your application carefully and submit it before the deadline for your selected application round.",
+
+          link:
+            "https://admissions.kaust.edu.sa/how-to-apply",
+
+          linkText:
+            "Submit application →"
+        },
+
+        {
+          title:
+            "Step 9: Admission evaluation",
+
+          description:
+            "KAUST evaluates applications based on academic preparation, qualifications, research potential, and other application materials.",
+
+          link:
+            "https://admissions.kaust.edu.sa/how-to-apply",
+
+          linkText:
+            "Learn about admissions →"
+        },
+
+        {
+          title:
+            "Step 10: Receive the admission and fellowship decision",
+
+          description:
+            "Students admitted to eligible KAUST graduate programs are considered for the KAUST Fellowship. There is no separate fellowship application.",
+
+          link:
+            "https://admissions.kaust.edu.sa/fees-funding",
+
+          linkText:
+            "View KAUST Fellowship →"
+        }
+
+      ]
+
+    },
+
+
+    // ========================================================
+    // PHD
+    // ========================================================
+
+    doctoral: {
+
+      label:
+        "PhD",
+
+      programs: [
+
+        "PhD in Computer Science",
+
+        "PhD in Computer Engineering",
+
+        "PhD in Electrical and Computer Engineering",
+
+        "PhD in Artificial Intelligence",
+
+        "PhD in Energy Resources and Petroleum Engineering",
+
+        "PhD in Environmental Science and Engineering",
+
+        "PhD in Marine Science and Engineering",
+
+        "Other eligible PhD programs"
+
+      ],
+
+      applicationProcess: [
+
+        {
+          title:
+            "Step 1: Check PhD admission requirements",
+
+          description:
+            "Review the academic qualifications and application requirements for KAUST doctoral admission.",
+
+          link:
+            "https://admissions.kaust.edu.sa/how-to-apply",
+
+          linkText:
+            "Check PhD requirements →"
+        },
+
+        {
+          title:
+            "Step 2: Select your research area",
+
+          description:
+            "Choose a research area that matches your academic background and long-term research interests.",
+
+          link:
+            "https://admissions.kaust.edu.sa/academics",
+
+          linkText:
+            "Explore research areas →"
+        },
+
+        {
+          title:
+            "Step 3: Explore KAUST faculty",
+
+          description:
+            "Review faculty members and research groups working in your area of interest.",
+
+          link:
+            "https://www.kaust.edu.sa/en/study/faculty",
+
+          linkText:
+            "Explore KAUST faculty →"
+        },
+
+        {
+          title:
+            "Step 4: Prepare your academic documents",
+
+          description:
+            "Prepare your Master's degree documents, transcripts, CV, statement of purpose, recommendation letters, and other required materials.",
+
+          link:
+            "https://admissions.kaust.edu.sa/how-to-apply",
+
+          linkText:
+            "View required documents →"
+        },
+
+        {
+          title:
+            "Step 5: Meet the English requirement",
+
+          description:
+            "Provide an accepted English-language test score unless you qualify for an applicable exemption.",
+
+          link:
+            "https://admissions.kaust.edu.sa/how-to-apply",
+
+          linkText:
+            "Check English requirements →"
+        },
+
+        {
+          title:
+            "Step 6: Prepare your research-focused application",
+
+          description:
+            "Present your academic preparation, research experience, interests, achievements, and future goals clearly in your application materials.",
+
+          link:
+            "https://admissions.kaust.edu.sa/how-to-apply",
+
+          linkText:
+            "Prepare your application →"
+        },
+
+        {
+          title:
+            "Step 7: Apply online",
+
+          description:
+            "Complete and submit your application through the official KAUST graduate admissions system.",
+
+          link:
+            "https://admissions.kaust.edu.sa/how-to-apply",
+
+          linkText:
+            "Apply to KAUST →"
+        },
+
+        {
+          title:
+            "Step 8: Application evaluation",
+
+          description:
+            "KAUST evaluates your academic background, research potential, application materials, and suitability for graduate study.",
+
+          link:
+            "https://admissions.kaust.edu.sa/how-to-apply",
+
+          linkText:
+            "Learn about admission →"
+        },
+
+        {
+          title:
+            "Step 9: Faculty and program consideration",
+
+          description:
+            "Your application may be considered in relation to relevant research areas and faculty interests.",
+
+          link:
+            "https://www.kaust.edu.sa/en/study/faculty",
+
+          linkText:
+            "Explore research faculty →"
+        },
+
+        {
+          title:
+            "Step 10: Receive final decision",
+
+          description:
+            "Students admitted to eligible KAUST graduate programs are considered for the KAUST Fellowship.",
+
+          link:
+            "https://admissions.kaust.edu.sa/fees-funding",
+
+          linkText:
+            "View fellowship details →"
+        }
+
+      ]
+
+    }
+
+  },
+
+
+  // ==========================================================
+  // ELIGIBILITY
+  // ==========================================================
+
+  eligibility: [
+
+    "International students can apply",
+
+    "Applicants must meet KAUST graduate admission requirements",
+
+    "Master's applicants normally need a Bachelor's degree or recognised equivalent qualification",
+
+    "PhD applicants normally need a relevant Master's degree or recognised equivalent qualification",
+
+    "Applicants must have an academic background appropriate for their selected program",
+
+    "Applicants must satisfy the English-language requirements unless an applicable exemption applies",
+
+    "Applicants must submit the required application documents",
+
+    "Applicants must satisfy any additional requirements of their selected program"
+
+  ],
+
+
+  // ==========================================================
+  // TEST REQUIREMENTS
+  // ==========================================================
+
+  testRequirements: {
+
+    title:
+      "Test & Admission Requirements",
+
+    description:
+      "KAUST has graduate admission requirements covering academic qualifications, English-language proficiency, and application materials. Requirements can vary depending on the applicant and program.",
+
+    tests: [
+
+      {
+        name:
+          "English Proficiency",
+
+        examples:
+          "TOEFL or IELTS",
+
+        note:
+          "Applicants should check KAUST's current minimum score and exemption rules."
+      },
+
+      {
+        name:
+          "GRE",
+
+        examples:
+          "Graduate Record Examination",
+
+        note:
+          "GRE is not required for admission, although applicants may submit scores if they wish."
+      }
+
+    ],
+
+    officialLink:
+      "https://admissions.kaust.edu.sa/how-to-apply",
+
+    linkText:
+      "Check KAUST admission requirements →"
+
+  },
+
+
+  // ==========================================================
+  // BENEFITS
+  // ==========================================================
+
+  benefits: [
+
+    "Full tuition and bench-fee coverage",
+
+    "Monthly living stipend",
+
+    "On-campus accommodation",
+
+    "Health insurance",
+
+    "Relocation support",
+
+    "Research and laboratory facilities",
+
+    "Access to KAUST research facilities",
+
+    "International academic and research environment"
+
+  ],
+
+
+  // ==========================================================
+  // DOCUMENTS
+  // ==========================================================
+
+  documents: [
+
+    "Bachelor's degree certificate for Master's applicants",
+
+    "Master's degree certificate for PhD applicants where required",
+
+    "Academic transcripts",
+
+    "Curriculum Vitae (CV)",
+
+    "Statement of Purpose",
+
+    "Letters of recommendation",
+
+    "English-language test score if required",
+
+    "Passport or identification document",
+
+    "Other documents requested through the KAUST application system"
+
+  ],
+
+
+  // ==========================================================
+  // SELECTION CRITERIA
+  // ==========================================================
+
+  selectionCriteria: [
+
+    "Academic performance",
+
+    "Strength of academic preparation",
+
+    "Research potential",
+
+    "Relevant academic or research experience",
+
+    "Quality of statement of purpose",
+
+    "Fit with the selected academic and research area",
+
+    "Strength of recommendation letters",
+
+    "Overall quality of the application"
+
+  ],
+
+
+  // ==========================================================
+  // IMPORTANT INFORMATION
+  // ==========================================================
+
+  importantInformation: {
+
+    title:
+      "Important Fellowship Information",
+
+    description:
+      "The KAUST Fellowship is generally awarded to students admitted to eligible graduate programs. Applicants do not normally submit a separate scholarship application.",
+
+    tips: [
+
+      "Build a strong academic record before applying",
+
+      "Choose a program that matches your academic background",
+
+      "Explore faculty and research groups before applying",
+
+      "Highlight research projects, publications, thesis work, or relevant technical projects",
+
+      "Write a focused Statement of Purpose",
+
+      "Use recommendation letters from professors or supervisors who know your academic or research work",
+
+      "Check the current admission requirements before submitting your application"
+
+    ]
+
+  },
+
+
+  // ==========================================================
+  // OFFICIAL LINKS
+  // ==========================================================
+
+  officialWebsite:
+    "https://www.kaust.edu.sa/",
+
+  applicationLink:
+    "https://admissions.kaust.edu.sa/how-to-apply",
+
+  fundingLink:
+    "https://admissions.kaust.edu.sa/fees-funding",
+
+  academicsLink:
+    "https://admissions.kaust.edu.sa/academics",
+
+  facultyLink:
+    "https://www.kaust.edu.sa/en/study/faculty"
+
+} ,
+// ============================================================
+// 8. IDB-KAUST JOINT PHD SCHOLARSHIP
+// ============================================================
+
+{
+  id: 10,
+
+  name:
+    "IDB-KAUST Joint PhD Scholarship Program",
+
+  image:
+    "https://www.kaust.edu.sa/images/kaustlibraries/publishingimages/about/policy/kaust-campus5.png",
+
+  university:
+    "King Abdullah University of Science and Technology (KAUST)",
+
+  location:
+    "Thuwal, Saudi Arabia",
+
+  funding:
+    "Fully Funded",
+
+  deadline:
+    "Varies — Check the official KAUST and IsDB announcements",
+
+  description:
+    "The IDB-KAUST Joint PhD Scholarship Program is a fully funded doctoral scholarship jointly supported by the Islamic Development Bank and King Abdullah University of Science and Technology. The program supports eligible researchers from IsDB member countries who wish to pursue a full-time PhD at KAUST.",
+
+
+  // ==========================================================
+  // STUDY LEVEL
+  // ==========================================================
+
+  studyLevels: {
+
+    doctoral: {
+
+      label:
+        "PhD",
+
+      programs: [
+
+        "PhD in Applied Physics",
+
+        "PhD in Bioengineering",
+
+        "PhD in Chemical Engineering",
+
+        "PhD in Chemistry",
+
+        "PhD in Computer Science",
+
+        "PhD in Electrical and Computer Engineering",
+
+        "PhD in Energy Resources and Petroleum Engineering",
+
+        "PhD in Environmental Science and Engineering",
+
+        "PhD in Marine Science and Engineering",
+
+        "PhD in Materials Science and Engineering",
+
+        "PhD in Mechanical Engineering",
+
+        "PhD in Plant Science",
+
+        "Other eligible KAUST PhD programs"
+
+      ],
+
+
+      applicationProcess: [
+
+  {
+    title: "Step 1: Explore KAUST programs",
+    description:
+      "Start by choosing a KAUST graduate program that matches your academic background and research interests. KAUST offers MS, MS/PhD and PhD programs across STEM disciplines.",
+    link:
+      "https://admissions.kaust.edu.sa/study",
+    linkText:
+      "Explore KAUST programs →"
+  },
+
+  {
+    title: "Step 2: Check the admission timeline",
+    description:
+      "Check the current admission round, application deadline and expected decision date before preparing your application.",
+    link:
+      "https://admissions.kaust.edu.sa/how-to-apply/admission-timelines",
+    linkText:
+      "Check KAUST deadlines →"
+  },
+
+  {
+    title: "Step 3: Check entry requirements",
+    description:
+      "Review the minimum degree, GPA, English-language and other admission requirements for KAUST graduate study.",
+    link:
+      "https://admissions.kaust.edu.sa/how-to-apply/entry-requirements",
+    linkText:
+      "Check entry requirements →"
+  },
+
+  {
+    title: "Step 4: Prepare your documents",
+    description:
+      "Prepare your academic transcripts, CV, statement of purpose, English-language evidence, passport information and details of three referees.",
+    link:
+      "https://admissions.kaust.edu.sa/how-to-apply/entry-requirements",
+    linkText:
+      "View required documents →"
+  },
+
+  {
+    title: "Step 5: Review the application process",
+    description:
+      "Understand how KAUST evaluates applications, including admissions review, faculty review, interviews and final decisions.",
+    link:
+      "https://admissions.kaust.edu.sa/how-to-apply/application-process",
+    linkText:
+      "View admission process →"
+  },
+
+  {
+    title: "Step 6: Create your KAUST application account",
+    description:
+      "Create an account in the KAUST application system and begin completing your graduate application.",
+    link:
+      "https://apply.kaust.edu.sa/apply/",
+    linkText:
+      "Open KAUST application portal →"
+  },
+
+  {
+    title: "Step 7: Complete your application",
+    description:
+      "Enter your academic information, upload the required documents and provide the details of your referees.",
+    link:
+      "https://admissions.kaust.edu.sa/how-to-apply",
+    linkText:
+      "View application instructions →"
+  },
+
+  {
+    title: "Step 8: Submit your application",
+    description:
+      "Review your application carefully and submit it before the applicable admission deadline.",
+    link:
+      "https://admissions.kaust.edu.sa/how-to-apply/application-process",
+    linkText:
+      "Submit KAUST application →"
+  },
+
+  {
+    title: "Step 9: Complete the review and interview stage",
+    description:
+      "After submission, your application may undergo admissions and faculty review. Shortlisted applicants may be invited for an academic interview.",
+    link:
+      "https://admissions.kaust.edu.sa/how-to-apply/application-process",
+    linkText:
+      "Learn about the selection process →"
+  },
+
+  {
+    title: "Step 10: Receive your admission decision",
+    description:
+      "KAUST communicates the outcome of your application by email. If admitted, follow the instructions provided to accept your place and complete the required next steps.",
+    link:
+      "https://admissions.kaust.edu.sa/how-to-apply/application-process",
+    linkText:
+      "View decision process →"
+  }
+
+]
+
+    }
+
+  },
+
+
+  // ==========================================================
+  // ELIGIBILITY
+  // ==========================================================
+
+  eligibility: [
+
+    "Applicants must be citizens of an Islamic Development Bank member country",
+
+    "Applicants must be 35 years old or younger",
+
+    "Applicants must be working full-time in an academic, research or development institution in their home country",
+
+    "Applicants must be nominated by their institution",
+
+    "Applicants must satisfy the eligibility requirements of the IsDB Merit Scholarship Program",
+
+    "Applicants must meet KAUST's PhD admission requirements",
+
+    "Applicants must obtain a firm admission offer from KAUST for a PhD program",
+
+    "Applicants must be able to pursue the PhD on a full-time basis"
+
+  ],
+
+
+  // ==========================================================
+  // BENEFITS
+  // ==========================================================
+
+  benefits: [
+
+    "Full tuition fee coverage",
+
+    "Monthly stipend",
+
+    "On-campus accommodation",
+
+    "Medical and dental coverage",
+
+    "Relocation support",
+
+    "Round-trip airfare according to the scholarship conditions",
+
+    "Access to KAUST research facilities",
+
+    "Opportunity to pursue a full-time PhD at KAUST",
+
+    "Research and academic development opportunities"
+
+  ],
+
+
+  // ==========================================================
+  // DOCUMENTS
+  // ==========================================================
+
+  documents: [
+
+    "Valid passport or identification document",
+
+    "Bachelor's degree certificate",
+
+    "Master's degree certificate",
+
+    "Academic transcripts",
+
+    "Curriculum Vitae (CV)",
+
+    "Statement of Purpose",
+
+    "Research interests or proposed research information",
+
+    "Letters of recommendation",
+
+    "English-language proficiency test score",
+
+    "KAUST PhD admission application documents",
+
+    "Institutional nomination",
+
+    "Documents required by the Islamic Development Bank",
+
+    "Other documents requested by KAUST or IsDB"
+
+  ],
+
+
+  // ==========================================================
+  // SELECTION CRITERIA
+  // ==========================================================
+
+  selectionCriteria: [
+
+    "Academic excellence",
+
+    "Research potential",
+
+    "Relevance of academic background to the intended PhD",
+
+    "Quality of the applicant's research interests",
+
+    "Potential contribution to scientific and technological development",
+
+    "Professional experience",
+
+    "Potential contribution to the applicant's home country",
+
+    "Institutional and development impact",
+
+    "Overall strength of the KAUST PhD application"
+
+  ],
+
+
+  // ==========================================================
+  // SPECIAL REQUIREMENTS
+  // ==========================================================
+
+  specialRequirements: [
+
+    {
+      title:
+        "IsDB Member Country",
+
+      description:
+        "The applicant must be a citizen of an Islamic Development Bank member country."
+    },
+
+    {
+      title:
+        "Age Requirement",
+
+      description:
+        "Applicants must be 35 years old or younger according to the current IDB-KAUST eligibility requirements."
+    },
+
+    {
+      title:
+        "Full-Time Employment",
+
+      description:
+        "Applicants must be working full-time in an academic, research or development institution in their home country."
+    },
+
+    {
+      title:
+        "Institutional Nomination",
+
+      description:
+        "The applicant must be nominated by their institution according to the program requirements."
+    },
+
+    {
+      title:
+        "KAUST Admission",
+
+      description:
+        "Applicants must obtain a firm admission offer from KAUST for an eligible PhD program."
+    }
+
+  ],
+
+
+  // ==========================================================
+  // OFFICIAL LINKS
+  // ==========================================================
+
+  officialWebsite:
+    "https://www.kaust.edu.sa/en/study/idb-kaust-scholarship",
+
+  kaustAdmissions:
+    "https://admissions.kaust.edu.sa/",
+
+  kaustPrograms:
+    "https://www.kaust.edu.sa/en/study",
+
+  isdbScholarships:
+    "https://www.isdb.org/scholarships"
+
+},
+
+
+
 ];
 
 

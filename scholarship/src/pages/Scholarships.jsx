@@ -1,20 +1,18 @@
-import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import ScholarshipCard from "../components/ScholarshipCard";
 import { getAllScholarships } from "../utils/scholarships";
 import "../styles/scholarships.css";
 
 export default function Scholarships() {
-  const [studyLevel, setStudyLevel] = useState("All");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeFilter = searchParams.get("filter") || "all";
 
   const scholarships = getAllScholarships();
 
-  function matchesStudyLevel(scholarship) {
-    if (studyLevel === "All") {
-      return true;
-    }
-
-    const text = [
+  function scholarshipText(scholarship) {
+    return [
       scholarship.available_program || "",
+      scholarship.funding || "",
       ...Object.keys(scholarship.studyLevels || {}),
       ...Object.values(scholarship.studyLevels || {}).flatMap(
         (level) => level.programs || []
@@ -22,29 +20,50 @@ export default function Scholarships() {
     ]
       .join(" ")
       .toLowerCase();
+  }
 
-    if (studyLevel === "Undergraduate") {
-      return (
-        text.includes("undergraduate") ||
-        text.includes("bachelor")
-      );
+  function hasUpcomingDeadline(deadline) {
+    const match = deadline?.match(
+      /\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2}),\s*(\d{4})/i
+    );
+
+    if (!match) return false;
+
+    const deadlineDate = new Date(`${match[1]} ${match[2]}, ${match[3]}`);
+    const today = new Date();
+    const ninetyDaysFromToday = new Date();
+    ninetyDaysFromToday.setDate(today.getDate() + 90);
+
+    return deadlineDate >= today && deadlineDate <= ninetyDaysFromToday;
+  }
+
+  function matchesFilter(scholarship) {
+    const text = scholarshipText(scholarship);
+
+    if (activeFilter === "fully-funded") {
+      return scholarship.funding?.toLowerCase().includes("fully funded");
     }
 
-    if (studyLevel === "Master's") {
-      return text.includes("master");
+    if (activeFilter === "undergraduate") {
+      return text.includes("undergraduate") || text.includes("bachelor");
     }
 
-    if (studyLevel === "PhD") {
+    if (activeFilter === "postgraduate") {
       return (
+        text.includes("master") ||
         text.includes("phd") ||
         text.includes("doctoral")
       );
     }
 
+    if (activeFilter === "deadline-soon") {
+      return hasUpcomingDeadline(scholarship.deadline);
+    }
+
     return true;
   }
 
-  const filteredScholarships = scholarships.filter(matchesStudyLevel);
+  const filteredScholarships = scholarships.filter(matchesFilter);
 
   return (
     <main className="scholarships-page">
@@ -67,16 +86,20 @@ export default function Scholarships() {
       {/* Filter is outside the blue hero section */}
       <section className="filter-section">
         <label className="study-filter">
-          Study level
+          Filter scholarships
 
           <select
-            value={studyLevel}
-            onChange={(event) => setStudyLevel(event.target.value)}
+            value={activeFilter}
+            onChange={(event) => {
+              const filter = event.target.value;
+              setSearchParams(filter === "all" ? {} : { filter });
+            }}
           >
-            <option value="All">All study levels</option>
-            <option value="Undergraduate">Undergraduate</option>
-            <option value="Master's">Master's</option>
-            <option value="PhD">PhD</option>
+            <option value="all">All scholarships</option>
+            <option value="fully-funded">Fully funded</option>
+            <option value="undergraduate">Undergraduate</option>
+            <option value="postgraduate">Master's &amp; PhD</option>
+            <option value="deadline-soon">Deadline within 90 days</option>
           </select>
         </label>
       </section>

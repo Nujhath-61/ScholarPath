@@ -34,7 +34,83 @@ const ListCard = ({ title, items, icon = "✓" }) => {
     </section>
   );
 };
+// Add this component above `export default function ScholarshipDetails()`
 
+function RequirementsCard({ requirements }) {
+  if (!requirements) return null;
+
+  return (
+    <section className="content-card">
+      <p className="section-label">ADMISSION</p>
+      <h2>{requirements.title || "Test requirements"}</h2>
+
+      {requirements.description && (
+        <p className="description">{requirements.description}</p>
+      )}
+
+      {requirements.tests?.length > 0 && (
+        <div className="requirements-list">
+          {requirements.tests.map((test, index) => (
+            <article className="requirement-item" key={test.name || index}>
+              <h3>{test.name}</h3>
+              {test.examples && (
+                <p>
+                  <strong>Examples:</strong> {test.examples}
+                </p>
+              )}
+              {test.note && (
+                <p>
+                  <strong>Note:</strong> {test.note}
+                </p>
+              )}
+            </article>
+          ))}
+        </div>
+      )}
+
+      {requirements.officialLink && (
+        <a
+          className="resource-link"
+          href={requirements.officialLink}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {requirements.linkText || "Check official requirements"} →
+        </a>
+      )}
+    </section>
+  );
+}
+
+function ResourcesCard({ resources }) {
+  if (!resources?.length) return null;
+
+  return (
+    <section className="content-card">
+      <p className="section-label">USEFUL LINKS</p>
+      <h2>Important resources</h2>
+
+      <div className="requirements-list">
+        {resources.map((resource, index) => (
+          <article className="requirement-item" key={resource.title || index}>
+            <h3>{resource.title}</h3>
+            {resource.description && <p>{resource.description}</p>}
+            {resource.link && (
+              <a
+                className="resource-link"
+                href={resource.link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {resource.linkText || "Open resource"} →
+              </a>
+            )}
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
 export default function ScholarshipDetails() {
   const { id } = useParams();
   const scholarship = getScholarshipById(id);
@@ -163,6 +239,65 @@ export default function ScholarshipDetails() {
             items={scholarship.documents}
             icon="↗"
           />
+
+          <ResourcesCard resources={scholarship.resources} />
+
+          <RequirementsCard requirements={scholarship.testRequirements} />
+
+          <ListCard
+            title="Course requirements"
+            items={scholarship.courseRequirements}
+            icon="✓"
+          />
+
+          <ListCard
+            title="Selection criteria"
+            items={scholarship.selectionCriteria}
+            icon="✓"
+          />
+
+          <ListCard
+            title="Application tips"
+            items={scholarship.tips}
+            icon="💡"
+          />
+
+          {scholarship.ncInformation && (
+            <section className="content-card">
+              <p className="section-label">ADDITIONAL INFORMATION</p>
+              <h2>
+                {scholarship.ncInformation.title || "Important information"}
+              </h2>
+
+              {scholarship.ncInformation.description && (
+                <p className="description">
+                  {scholarship.ncInformation.description}
+                </p>
+              )}
+
+              {scholarship.ncInformation.tips?.length > 0 && (
+                <ul className="check-list additional-tips">
+                  {scholarship.ncInformation.tips.map((tip, index) => (
+                    <li key={index}>
+                      <span className="check-icon">✓</span>
+                      <span>{tip}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {scholarship.ncInformation.officialLink && (
+                <a
+                  className="resource-link"
+                  href={scholarship.ncInformation.officialLink}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {scholarship.ncInformation.linkText || "Visit official source"} →
+                </a>
+              )}
+            </section>
+          )}
 
           {currentLevel?.applicationProcess?.length > 0 && (
             <section className="content-card">
