@@ -1,18 +1,38 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { blogs } from "../data/blogs";
 import { useState } from "react";
 import "../styles/blogDetails.css";
 
-function BlogDetails() {
+const savedBlogsKey = (userId) => `savedBlogs_${userId}`;
 
+function BlogDetails() {
     const { id } = useParams();
+    const navigate = useNavigate();
 
     const blog = blogs.find(
         (item) => item.id === Number(id)
     );
 
-    const [saved, setSaved] = useState(false);
+    const [, refreshSavedState] = useState(0);
 
+    const savedUser = JSON.parse(
+        localStorage.getItem("currentUser") || "null"
+    );
+
+    const saved = savedUser
+        ? JSON.parse(
+              localStorage.getItem(
+                  savedBlogsKey(savedUser.id)
+              ) || "[]"
+          ).some(
+              (item) => item.id === Number(id)
+          )
+        : false;
+
+
+    // ==========================================
+    // BLOG NOT FOUND
+    // ==========================================
 
     if (!blog) {
         return (
@@ -27,6 +47,10 @@ function BlogDetails() {
     }
 
 
+    // ==========================================
+    // RELATED BLOGS
+    // ==========================================
+
     const relatedBlogs = blogs.filter(
         (item) =>
             item.category === blog.category &&
@@ -34,39 +58,92 @@ function BlogDetails() {
     );
 
 
-    function saveBlog(){
+    // ==========================================
+    // SAVE / REMOVE BLOG
+    // ==========================================
 
-        setSaved(!saved);
+    function saveBlog() {
 
-        let savedBlogs =
-            JSON.parse(
-                localStorage.getItem("savedBlogs")
-            ) || [];
+        // ------------------------------------------
+        // 1. CHECK LOGIN
+        // ------------------------------------------
 
+        const currentUser = JSON.parse(
+            localStorage.getItem("currentUser") || "null"
+        );
 
-        if(!saved){
+        if (!currentUser) {
 
-            savedBlogs.push(blog);
+            alert("Please log in to save a blog.");
 
+            navigate("/login");
+
+            return;
         }
-        else{
 
-            savedBlogs =
-            savedBlogs.filter(
-                item => item.id !== blog.id
+
+        // ------------------------------------------
+        // 2. GET SAVED BLOGS
+        // ------------------------------------------
+
+        let savedBlogs = JSON.parse(
+            localStorage.getItem(
+                savedBlogsKey(currentUser.id)
+            ) || "[]"
+        );
+
+
+        // ------------------------------------------
+        // 3. SAVE BLOG
+        // ------------------------------------------
+
+        if (!saved) {
+
+            const alreadySaved = savedBlogs.some(
+                (item) => item.id === blog.id
+            );
+
+            if (!alreadySaved) {
+                savedBlogs.push(blog);
+            }
+
+            refreshSavedState(
+                (version) => version + 1
             );
 
         }
 
 
+        // ------------------------------------------
+        // 4. REMOVE BLOG
+        // ------------------------------------------
+
+        else {
+
+            savedBlogs = savedBlogs.filter(
+                (item) => item.id !== blog.id
+            );
+
+            refreshSavedState(
+                (version) => version + 1
+            );
+        }
+
+
+        // ------------------------------------------
+        // 5. UPDATE LOCAL STORAGE
+        // ------------------------------------------
+
         localStorage.setItem(
-            "savedBlogs",
+            savedBlogsKey(currentUser.id),
             JSON.stringify(savedBlogs)
         );
-
     }
 
 
+    // ==========================================
+    // PAGE
+    // ==========================================
 
     return (
 
@@ -74,17 +151,21 @@ function BlogDetails() {
 
             <article className="blog-container">
 
+                {/* Category */}
 
                 <span className="blog-tag">
                     {blog.category}
                 </span>
 
 
+                {/* Title */}
+
                 <h1>
                     {blog.title}
                 </h1>
 
 
+                {/* Blog Information */}
 
                 <div className="blog-info">
 
@@ -92,11 +173,9 @@ function BlogDetails() {
                         👤 {blog.author}
                     </span>
 
-
                     <span>
                         📅 {blog.date}
                     </span>
-
 
                     <span>
                         ⏱ {blog.readTime}
@@ -105,14 +184,21 @@ function BlogDetails() {
                 </div>
 
 
+                {/* ==========================================
+                    BLOG CONTENT
+                ========================================== */}
 
-                <div className="article-content">
+                <div
+                    className="article-content"
+                    dangerouslySetInnerHTML={{
+                        __html: blog.content
+                    }}
+                />
 
-                    {blog.content}
 
-                </div>
-
-
+                {/* ==========================================
+                    ACTION BUTTONS
+                ========================================== */}
 
                 <div className="blog-actions">
 
@@ -120,9 +206,10 @@ function BlogDetails() {
                         onClick={saveBlog}
                         className="save-btn"
                     >
-                        {saved ? 
-                        "❤️ Saved" : 
-                        "🤍 Save Blog"}
+                        {saved
+                            ? "❤️ Saved"
+                            : "🤍 Save Blog"
+                        }
                     </button>
 
 
@@ -136,8 +223,9 @@ function BlogDetails() {
                 </div>
 
 
-
-                {/* Author */}
+                {/* ==========================================
+                    AUTHOR
+                ========================================== */}
 
                 <section className="author-box">
 
@@ -160,74 +248,69 @@ function BlogDetails() {
 
                     </div>
 
-
                 </section>
-
 
             </article>
 
 
-
-            {/* Related Blogs */}
+            {/* ==========================================
+                RELATED BLOGS
+            ========================================== */}
 
             {
-                relatedBlogs.length > 0 &&
+                relatedBlogs.length > 0 && (
 
-                <section className="related">
+                    <section className="related">
 
-                    <h2>
-                        Related Articles
-                    </h2>
-
-
-                    <div className="related-grid">
+                        <h2>
+                            Related Articles
+                        </h2>
 
 
-                    {
-                        relatedBlogs.map(item => (
+                        <div className="related-grid">
 
-                            <div
-                                className="related-card"
-                                key={item.id}
-                            >
+                            {
+                                relatedBlogs.map(item => (
 
-                                <img
-                                    src={item.image}
-                                    alt={item.title}
-                                />
-
-
-                                <div>
-
-                                    <h3>
-                                        {item.title}
-                                    </h3>
-
-
-                                    <Link
-                                        to={`/blogs/${item.id}`}
+                                    <div
+                                        className="related-card"
+                                        key={item.id}
                                     >
-                                        Read More →
-                                    </Link>
 
-                                </div>
-
-                            </div>
-
-                        ))
-                    }
+                                        <img
+                                            src={item.image}
+                                            alt={item.title}
+                                        />
 
 
-                    </div>
+                                        <div>
+
+                                            <h3>
+                                                {item.title}
+                                            </h3>
 
 
-                </section>
+                                            <Link
+                                                to={`/blogs/${item.id}`}
+                                            >
+                                                Read More →
+                                            </Link>
 
+                                        </div>
+
+                                    </div>
+
+                                ))
+                            }
+
+                        </div>
+
+                    </section>
+
+                )
             }
 
-
         </main>
-
     );
 }
 

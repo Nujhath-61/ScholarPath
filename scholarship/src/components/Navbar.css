@@ -1,1 +1,135 @@
-.navbar { min-height: 76px; padding: 0 7%; display: flex; align-items: center; justify-content: space-between; gap: 22px; background: #fff; border-bottom: 1px solid #dbe3ef; }.brand { color: #172554; font-size: 1.3rem; font-weight: 800; text-decoration: none; }nav { display: flex; gap: 25px; }nav a, .profile-link, .login-link { color: #64748b; font-size: .9rem; font-weight: 600; text-decoration: none; }nav a:hover, nav a.active, .profile-link:hover, .login-link:hover { color: #2563eb; }.nav-user { display: flex; align-items: center; gap: 16px; }.signup-link { padding: 10px 16px; border-radius: 8px; background: #2563eb; color: #fff; }.signup-link:hover { background: #1d4ed8; color: #fff; }.nav-logout { border: 0; background: transparent; color: #64748b; cursor: pointer; font: inherit; font-size: .9rem; font-weight: 600; }.nav-logout:hover { color: #dc2626; }@media (max-width: 750px) { .navbar { padding: 0 5%; }.navbar nav { display: none; } }@media (max-width: 440px) { .login-link { display: none; } }
+/* scholarship/src/components/Navbar.css */
+
+.navbar {
+  min-height: 76px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  position: relative;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid #dbe3ef;
+}
+
+.brand {
+  color: #172554;
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 25px;
+}
+
+.navbar nav a,
+.profile-link,
+.login-link {
+  color: #64748b;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active,
+.profile-link:hover,
+.login-link:hover {
+  color: #2563eb;
+}
+
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.signup-link {
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #fff;
+}
+
+.signup-link:hover {
+  background: #1d4ed8;
+  color: #fff;
+}
+
+.nav-logout {
+  border: 0;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.nav-logout:hover {
+  color: #dc2626;
+}
+
+.mobile-menu-button {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #dbe3ef;
+  border-radius: 8px;
+  background: #fff;
+  color: #172554;
+  cursor: pointer;
+  font-size: 1.35rem;
+}
+
+@media (max-width: 750px) {
+  .navbar {
+    min-height: 66px;
+    padding: 0 5%;
+  }
+
+  .mobile-menu-button {
+    display: grid;
+    place-items: center;
+    margin-left: auto;
+  }
+
+  .navbar nav {
+    display: none !important;
+  }
+
+  .navbar nav.open {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    width: 100%;
+    padding: 16px 5% 18px;
+    background: #fff;
+    border-bottom: 1px solid #dbe3ef;
+    box-shadow: 0 12px 22px rgba(15, 23, 42, 0.1);
+  }
+
+  .navbar nav a {
+    padding: 11px 12px;
+    border-radius: 8px;
+    background: #f8fafc;
+    color: #334155;
+    text-align: center;
+  }
+
+  .navbar nav a.active {
+    color: #1d4ed8;
+    background: #dbeafe;
+  }
+
+  .nav-user {
+    display: none;
+  }
+}

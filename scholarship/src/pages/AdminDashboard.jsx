@@ -1,4 +1,74 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import "../styles/appPages.css";
-export default function AdminDashboard() { const navigate = useNavigate(); const [items, setItems] = useState(() => JSON.parse(localStorage.getItem("list") || "[]")); function del(index) { if (!window.confirm(`Delete ${items[index].title || "this scholarship"}?`)) return; const next = items.filter((_, i) => i !== index); localStorage.setItem("list", JSON.stringify(next)); setItems(next); } return <main className="content-page admin-page"><section className="admin-hero"><div><p className="eyebrow">ADMIN DASHBOARD</p><h1>Welcome back, Admin!</h1><p>Manage your scholarship opportunities in one simple place.</p></div><Link className="primary-button" to="/admin/new">+ Add scholarship</Link></section><section className="admin-profile"><span className="avatar">T</span><div><small>Name</small><strong>Tom</strong></div><div><small>Institution</small><strong>ABCD</strong></div><div><small>Designation</small><strong>Senior Admission Officer</strong></div><div><small>Phone number</small><strong>011223344</strong></div></section><div className="section-row"><div><p className="eyebrow">SCHOLARSHIPS</p><h2>Posted scholarships</h2></div><span className="count-badge">{items.length} scholarship{items.length === 1 ? "" : "s"}</span></div>{items.length ? <section className="admin-list">{items.map((item, index) => <article key={`${item.title}-${index}`}><div><h3>{item.title}</h3><p>📍 {item.location || "Location not added"} · 📅 Deadline: {item.deadline || "Not added"}</p><p>{item.description || "No description added."}</p>{item.link && <a href={item.link} target="_blank" rel="noreferrer">Visit scholarship website →</a>}</div><div className="admin-actions"><Link to={`/admin/edit/${index}`}>Edit</Link><button onClick={() => del(index)}>Delete</button></div></article>)}</section> : <section className="empty-message"><h3>No scholarships posted yet</h3><p>Click “Add scholarship” to publish your first opportunity.</p></section>}<button className="text-button" onClick={() => navigate("/")}>Log out</button></main>; }
+
+export default function AdminDashboard() {
+  const location = useLocation();
+  const justRegistered = location.state?.justRegistered;
+
+  const [items, setItems] = useState(() => JSON.parse(localStorage.getItem("list") || "[]"));
+  const currentUser = JSON.parse(localStorage.getItem("currentUser") || "null");
+
+  function del(index) {
+    if (!window.confirm(`Delete ${items[index].title || "this scholarship"}?`)) return;
+    const next = items.filter((_, i) => i !== index);
+    localStorage.setItem("list", JSON.stringify(next));
+    setItems(next);
+  }
+
+  return (
+    <main className="content-page admin-page">
+      <section className="admin-hero">
+        <div>
+          <p className="eyebrow">ADMIN DASHBOARD</p>
+          <h1>
+            {justRegistered ? "Welcome" : "Welcome back"}, {currentUser?.fullName || "Admin"}!
+          </h1>
+          <p>Manage your scholarship opportunities in one simple place.</p>
+        </div>
+        <Link className="primary-button" to="/admin/new">+ Add scholarship</Link>
+      </section>
+
+      <section className="admin-profile">
+        <span className="avatar">{currentUser?.fullName?.[0]?.toUpperCase() || "A"}</span>
+        <div><small>Name</small><strong>{currentUser?.fullName || "—"}</strong></div>
+        <div><small>Institution</small><strong>{currentUser?.institution || "—"}</strong></div>
+        <div><small>Designation</small><strong>{currentUser?.designation || "—"}</strong></div>
+        <div><small>Phone number</small><strong>{currentUser?.phone || "—"}</strong></div>
+      </section>
+
+      <div className="section-row">
+        <div>
+          <p className="eyebrow">SCHOLARSHIPS</p>
+          <h2>Posted scholarships</h2>
+        </div>
+        <span className="count-badge">{items.length} scholarship{items.length === 1 ? "" : "s"}</span>
+      </div>
+
+      {items.length ? (
+        <section className="admin-list">
+          {items.map((item, index) => (
+            <article key={`${item.title}-${index}`}>
+              <div>
+                <h3>{item.title}</h3>
+                <p>📍 {item.location || "Location not added"} · 📅 Deadline: {item.deadline || "Not added"}</p>
+                <p>{item.description || "No description added."}</p>
+                {item.link && <a href={item.link} target="_blank" rel="noreferrer">Visit scholarship website →</a>}
+              </div>
+              <div className="admin-actions">
+                <Link to={`/admin/edit/${index}`}>Edit</Link>
+                <button onClick={() => del(index)}>Delete</button>
+              </div>
+            </article>
+          ))}
+        </section>
+      ) : (
+        <section className="empty-message">
+          <h3>No scholarships posted yet</h3>
+          <p>Click "Add scholarship" to publish your first opportunity.</p>
+        </section>
+      )}
+
+    </main>
+  );
+}

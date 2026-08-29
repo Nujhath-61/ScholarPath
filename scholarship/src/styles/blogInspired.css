@@ -14,5 +14,77 @@ body { font-family: "Poppins", sans-serif; background: #f8fafc; }
 /* Scholarship pages now follow the same blue hero + raised white card pattern. */
 .scholarships-page { padding: 0 0 64px; background: #f8fafc; }.scholarships-hero { max-width: none; margin: 0 0 40px; padding: 60px max(4%,calc((100% - 1050px)/2)); color: #fff; text-align: center; background: linear-gradient(135deg,#1d4ed8,#2563eb); }.scholarships-hero .eyebrow { display: inline-block; padding: 7px 15px; border-radius: 30px; background: rgba(255,255,255,.18); color: #fff; }.scholarships-hero h1 { color: #fff; font-family: "Poppins", sans-serif; font-size: clamp(1.8rem,4vw,3rem); }.scholarships-hero > p:not(.eyebrow) { margin: 18px auto 24px; color: #fff; opacity: .92; }.opportunity-summary { justify-content: center; }.opportunity-summary span { border: 0; background: rgba(255,255,255,.16); color: #fff; }.opportunity-summary strong { color: #fff; }.scholarship-grid { width: min(1050px,92%); margin: auto; }.scholarship-grid .scholarship-card { border: 0; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,.07); }.scholarship-grid .scholarship-card:hover { box-shadow: 0 14px 28px rgba(0,0,0,.12); }.scholarship-grid .scholarship-card h2 { color: #0f172a; font-family: "Poppins", sans-serif; }.program-label, .scholarship-grid .details-btn { color: #2563eb; }
 
-.scholarship-details { padding-top: 0; background: #f8fafc; }.details-hero { height: 260px; background: linear-gradient(135deg,#1d4ed8,#2563eb); }.details-hero img { opacity: .28; }.details-container { max-width: 900px; margin: -60px auto 40px; padding: 45px; border: 0; border-radius: 24px; box-shadow: 0 20px 50px rgba(15,23,42,.12); }.details-title h1, .detail-section h2 { color: #0f172a; font-family: "Poppins", sans-serif; }.details-title h1 { font-size: clamp(2rem,4vw,3rem); }.details-info { border: 0; background: #e2e8f0; }.details-info > div { background: #f8fafc; }.details-grid .detail-section { border: 0; background: #f8fafc; }.application-callout { border-radius: 15px; background: #f8fafc; }.application-callout h2 { color: #172554; font-family: "Poppins", sans-serif; }.application-callout p:not(.eyebrow) { color: #64748b; }.application-callout .eyebrow { color: #2563eb; }.application-callout .apply-btn { background: #2563eb; color: #fff; }
+.scholarship-details { padding-top: 0; background: #f8fafc; }.details-hero { height: 260px; background: #0f172a; }.details-hero img { opacity: 1; }.details-container { max-width: 900px; margin: -60px auto 40px; padding: 45px; border: 0; border-radius: 24px; box-shadow: 0 20px 50px rgba(15,23,42,.12); }.details-title h1, .detail-section h2 { color: #0f172a; font-family: "Poppins", sans-serif; }.details-title h1 { font-size: clamp(2rem,4vw,3rem); }.details-info { border: 0; background: #e2e8f0; }.details-info > div { background: #f8fafc; }.details-grid .detail-section { border: 0; background: #f8fafc; }.application-callout { border-radius: 15px; background: #f8fafc; }.application-callout h2 { color: #172554; font-family: "Poppins", sans-serif; }.application-callout p:not(.eyebrow) { color: #64748b; }.application-callout .eyebrow { color: #2563eb; }.application-callout .apply-btn { background: #2563eb; color: #fff; }
+
+.resources-page { padding: 0 0 64px; background: #f8fafc; }.resources-body { width: min(1050px,92%); margin: 0 auto; }
 @media (max-width:700px) { .page-hero { margin-bottom: 28px; }.details-container { margin: -40px 15px 30px; padding: 25px; }.scholarships-hero { padding: 45px 20px; } }
+/* Add at the END of scholarship/src/styles/blogInspired.css */
+
+/* Show account actions on mobile */
+@media (max-width: 750px) {
+  .navbar .nav-user {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+  }
+
+  .navbar .profile-link,
+  .navbar .login-link,
+  .navbar .nav-logout {
+    display: inline-flex !important;
+    align-items: center;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+
+  .navbar .profile-link:not(.signup-link),
+  .navbar .login-link {
+    color: #2563eb;
+    background: #eff6ff;
+  }
+
+  .navbar .nav-logout {
+    border: 0;
+    color: #dc2626;
+    background: #fef2f2;
+  }
+
+  .navbar .signup-link {
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 440px) {
+  .navbar .nav-user {
+    display: flex !important;
+  }
+
+  .navbar .profile-link,
+  .navbar .login-link,
+  .navbar .nav-logout {
+    display: inline-flex !important;
+    padding: 7px 8px;
+    font-size: 0.72rem;
+  }
+
+  .navbar .profile-link:not(.signup-link) {
+    font-size: 0;
+  }
+
+  .navbar .profile-link:not(.signup-link)::before {
+    content: "Profile";
+    font-size: 0.72rem;
+  }
+
+  .navbar .nav-logout {
+    font-size: 0;
+  }
+
+  .navbar .nav-logout::before {
+    content: "Log out";
+    font-size: 0.72rem;
+  }
+}

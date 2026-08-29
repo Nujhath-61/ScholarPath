@@ -2,6 +2,8 @@ import { useState } from "react";
 import { blogs } from "../data/blogs";
 import BlogCard from "../components/BlogCard";
 import "../styles/blog.css";
+import { Link } from "react-router-dom";
+
 
 function Blogs() {
 
@@ -25,26 +27,7 @@ function Blogs() {
 
         <main className="blogs-page">
 
-            {/* Hero Section */}
-
-            <section className="blog-hero">
-
-                <p className="blog-hero-tag">
-                    SCHOLARPATH BLOG
-                </p>
-
-                <h1>
-                    Scholarship Tips, Study Abroad Guides &
-                    Student Resources
-                </h1>
-
-                <p className="blog-hero-description">
-                    Learn how to prepare stronger scholarship
-                    applications, write better SOPs, ace interviews,
-                    and study abroad with confidence.
-                </p>
-
-            </section>
+           
 
 
             {/* Featured Blog */}
@@ -78,6 +61,12 @@ function Blogs() {
                         <span>
                             ⏱ {featuredBlog.readTime}
                         </span>
+                        <Link
+  to={`/blogs/${featuredBlog.id}`}
+  className="read-more"
+>
+  Read More →
+</Link>
 
                     </div>
 

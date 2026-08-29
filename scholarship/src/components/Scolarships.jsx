@@ -1,4 +1,3 @@
-import React from "react";
 import ScholarshipCard from "../components/ScholarshipCard";
 import { page1, page2 } from "../data/scholarships";
 

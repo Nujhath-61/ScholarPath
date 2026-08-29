@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useState } from "react";
 import "../styles/appPages.css";
 const getUser = () => JSON.parse(localStorage.getItem("currentUser") || "null");
 export default function Profile() {
   const [user, setUser] = useState(getUser); const [editing, setEditing] = useState(false);
+  const [saved, setSaved] = useState(() => { const currentUser = getUser(); return currentUser ? JSON.parse(localStorage.getItem(`savedScholarships_${currentUser.id}`) || "[]") : []; });
   if (!user) return <main className="content-page empty-page"><h1>You are not logged in.</h1><p>Create an account or log in to view your profile.</p><Link className="primary-button" to="/login">Log in</Link></main>;
-  const key = `savedScholarships_${user.id}`; const [saved, setSaved] = useState(() => JSON.parse(localStorage.getItem(key) || "[]"));
+  if (user.role === "admin") return <Navigate to="/admin" replace />;
+  const key = `savedScholarships_${user.id}`;
   function save(e) { e.preventDefault(); const data = Object.fromEntries(new FormData(e.currentTarget)); const updated = { ...user, ...data }; localStorage.setItem("currentUser", JSON.stringify(updated)); const users = JSON.parse(localStorage.getItem("scholarPathUsers") || "[]").map((item) => item.id === updated.id ? updated : item); localStorage.setItem("scholarPathUsers", JSON.stringify(users)); setUser(updated); setEditing(false); }
   function remove(index) { const next = saved.filter((_, i) => i !== index); localStorage.setItem(key, JSON.stringify(next)); setSaved(next); }
   const initials = user.fullName.split(" ").map((part) => part[0]).join("").slice(0, 2).toUpperCase();
